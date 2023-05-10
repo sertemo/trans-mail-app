@@ -7,7 +7,7 @@ from typing import Literal
 
 #Cargamos variables de entorno
 config = dotenv_values(".env")
-HUGGINGFACE_API_KEY = config["HUGGINGFACE_API_KEY"]
+#HUGGINGFACE_API_KEY = config["HUGGINGFACE_API_KEY"]
 OPENAI_API_KEY = config["OPENAI_API_KEY"]
 
 template = """

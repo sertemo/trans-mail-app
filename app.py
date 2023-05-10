@@ -1,5 +1,5 @@
 import streamlit as st
-from llm_logics import convert_mail
+from .llm_logics import convert_mail
 
 st.set_page_config(
     page_title="TransMailApp",
