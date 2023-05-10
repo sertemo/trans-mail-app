@@ -18,9 +18,9 @@ user_email = st.experimental_user["email"]
 if user_email is not None:
     user_acount = st.experimental_user["email"].split("@")[0]
 else:
-    user_acount = "Forastero"
-    
-st.info(f"Bienvenido, {user_acount} !")
+    user_acount = ""
+
+st.info(f"Bienvenid@ {user_acount}!")
 
 if st.session_state.get("email_input",None):
     st.caption("último mail enviado:")
@@ -50,7 +50,7 @@ with col2:
         ("openai",)
     )
 
-temperature = st.slider("Escoger un valor de aleatoriedad",min_value=0.0,max_value=1.0,step=0.1,key="temp")
+temperature = st.slider("Escoge un valor de creatividad",min_value=0.0,max_value=1.0,step=0.1,key="temp")
 
 def contar_palabras():
     num_words = len(st.session_state["email_input"].split())
