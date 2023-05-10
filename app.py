@@ -22,9 +22,9 @@ else:
 
 st.info(f"Bienvenid@ {user_acount}!")
 
-if st.session_state.get("email_input",None):
-    st.caption("último mail enviado:")
-    st.caption(st.session_state.email_input[:50]+"...")
+if st.session_state.get("last_response",None):
+    st.caption("última respuesta recibida:")
+    st.caption(st.session_state.last_response[:100]+"...")
 
 st.header("Introduce un texto para formalizar y traducir")
 
@@ -76,9 +76,11 @@ if len(email.split()) > 700:
     st.error("El email es demasiado largo.",icon="🛑")
     st.stop()
 
-if email:
-    with st.spinner("Pensando..."):
-        response = lg.convert_mail(language=language,email=email,llm_source=opcion_llm,temperatura=temperature)
-    st.divider()
-    st.subheader("Email respuesta:")
-    st.write(response)
+if st.button("Generar respuesta"):
+    if email:
+        with st.spinner("Pensando..."):
+            response = lg.convert_mail(language=language,email=email,llm_source=opcion_llm,temperatura=temperature)
+        st.divider()
+        st.subheader("Email respuesta:")
+        st.write(response)
+        st.session_state["last_response"] = response
