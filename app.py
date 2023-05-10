@@ -14,7 +14,12 @@ st.markdown("Aplicación web para formalizar y traducir emails.")
 #"st.session_state_object:", st.session_state
 
 user_email = st.experimental_user["email"]
-user_acount = st.experimental_user["email"].split("@")[0]
+
+if user_email is not None:
+    user_acount = st.experimental_user["email"].split("@")[0]
+else:
+    user_acount = "Forastero"
+    
 st.info(f"Bienvenido, {user_acount} !")
 
 if st.session_state.get("email_input",None):
