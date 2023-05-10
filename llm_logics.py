@@ -3,12 +3,13 @@ from langchain.llms import HuggingFaceHub
 from langchain import PromptTemplate
 from langchain import OpenAI
 from typing import Literal
+import os
 
-
+OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
 #Cargamos variables de entorno
-config = dotenv_values(".env")
+#config = dotenv_values(".env")
 #HUGGINGFACE_API_KEY = config["HUGGINGFACE_API_KEY"]
-OPENAI_API_KEY = config["OPENAI_API_KEY"]
+#OPENAI_API_KEY = config["OPENAI_API_KEY"]
 
 template = """
     Below is an email that may be poorly worded.
