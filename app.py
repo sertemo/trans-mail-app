@@ -1,5 +1,5 @@
 import streamlit as st
-from .llm_logics import convert_mail
+import llm_logics as lg
 
 st.set_page_config(
     page_title="TransMailApp",
@@ -73,7 +73,7 @@ if len(email.split()) > 700:
 
 if email:
     with st.spinner("Pensando..."):
-        response = convert_mail(language=language,email=email,llm_source=opcion_llm,temperatura=temperature)
+        response = lg.convert_mail(language=language,email=email,llm_source=opcion_llm,temperatura=temperature)
     st.divider()
     st.subheader("Email respuesta:")
     st.write(response)
