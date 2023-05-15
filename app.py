@@ -56,7 +56,7 @@ def contar_palabras(texto:str=""):
     num_words = len(texto.split())
     return num_words
 
-@st.cache_data
+@st.cache_data(show_spinner=False)
 def get_response(texto:str,language:str)->str:
     response = lg.convert_mail(
         language=language,
@@ -93,6 +93,7 @@ if st.button("Generar respuesta"):
     if email:        
         st.divider()
         st.subheader("Email respuesta:")
-        response = get_response(email,language)
-        st.write(response)
-        st.session_state["last_response"] = response
+        with st.spinner("Pensando..."):
+            response = get_response(email,language)
+            st.write(response)
+            st.session_state["last_response"] = response
