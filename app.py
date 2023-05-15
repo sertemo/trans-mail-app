@@ -8,12 +8,10 @@ st.set_page_config(
     #initial_sidebar_state="collapse",
 )
 
-
 st.title("TransMailApp  📧")
 st.markdown("Aplicación web para formalizar y traducir :red[emails].")
 
-"st.session_state_object:", st.session_state
-
+#"st.session_state_object:", st.session_state
 
 st.info(f"Bienvenid@ !")
 col1, col2 = st.columns(2)
