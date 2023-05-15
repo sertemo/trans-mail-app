@@ -65,7 +65,7 @@ def get_response(texto:str,language:str)->str:
         email=texto,
         llm_source=opcion_llm,
         temperatura=temperature)
-    st.write(response)
+    return response
 
 def contar_generaciones():
     if st.session_state.get("contador"):
