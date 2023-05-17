@@ -9,6 +9,7 @@ import os
 OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
 
 template = """
+    You are an expert email writer.
     Below is an email that may be poorly worded.
     This email is written in spanish.
     Your goal is to:
